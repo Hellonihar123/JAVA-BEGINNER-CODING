@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class CalculatePower {
 	public static int calculate(int b,int p) {
 		if(p!=0) {
-			return b* calculate(b*p-1);
+			return b* calculate(b,p-1);
 		}else
 			return 1;
 	}

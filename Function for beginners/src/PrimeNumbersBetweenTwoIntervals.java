@@ -1,45 +1,34 @@
 import java.util.Scanner;
+public class PrimeNumbersBetweenTwoIntervals{
+	
+public static boolean IsPrime(int my_input) {
+    boolean flag = true;
+    for (int i = 2; i <= my_input / 2; ++i) {
+       if (my_input % i == 0) {
+          flag = false;
+          break;
+       }
+    }
+    return flag;
+ }
 
-public class PrimeNumbersBetweenTwoIntervals {
-	public static boolean checkprime(int n) {
-		boolean isPrime=true;
-		//0 and 1 are not prime numbers
-		if(n==0|| n==1) {
-			isPrime=false;
-		}else {
-			for (int j=2;j<=n/2;++j) {
-				if(n%j==0) {
-					isPrime=false;
-					break;
-				}
-			}
-		}
-		
-
-	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int i;
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Enter two number to find prime numbers between them:");
-		int a=sc.nextInt();
-		int b=sc.nextInt();
-		boolean flag;
-		//swapping two numbers if a>b
-		if(a>b) {
-			b=a+b;
-			a=b-a;
-			b=b-a;
-		}
-		System.out.print("prime numbers between "+a +" & "+b +" are:");
-		for(int i=a+1;i<b;++i)
-			flag= checkprime(i);
-		if(flag)
-			System.out.print(i+" ");
+		 int my_high, my_low;
+	      System.out.println("Required packages have been imported");
+	      Scanner my_scanner = new Scanner(System.in);
+	      System.out.println("A reader object has been defined ");
+	      System.out.print("Enter the starting number : ");
+	      my_low = my_scanner.nextInt();
+	      System.out.print("Enter an ending Number: ");
+	      my_high = my_scanner.nextInt();
+	      System.out.println("The prime numbers between the interval " + my_low + " and " + my_high + " are:");
+	      while (my_low < my_high) {
+	         if (IsPrime(my_low))
+	            System.out.print(my_low + " ");
+	            ++my_low;
+	      }
 		
-		
-		
-	}
-
 }
+	}
